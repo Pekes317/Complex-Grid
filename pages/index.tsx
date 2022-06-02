@@ -17,6 +17,7 @@ const Home: NextPage = () => {
         <section className={styles.searchBox}>
           Search Box <input />
         </section>
+        <section className={styles.guide}>Guide Block</section>
         <section className={styles.verts}>Verticals</section>
         <aside className={styles.filters}>Side Bar with Filters</aside>
         <main className={styles.results}>Search results</main>
