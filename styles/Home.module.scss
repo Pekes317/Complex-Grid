@@ -1,0 +1,65 @@
+$breakpoint: 1200px;
+$maxWidth: 1500px;
+
+.containerWrapper {
+  height: 100vh;
+  margin: 0 auto;
+  max-width: $maxWidth;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas: 'feedback searchbox' 'filters verts' 'filters results' 'filters page';
+    height: 100%;
+
+    .feedback {
+      background: cadetblue;
+      color: #fff;
+      grid-area: feedback;
+      padding: 1rem;
+    }
+
+    .filters {
+      background: crimson;
+      color: #fff;
+      grid-area: filters;
+      padding: 1rem;
+    }
+
+    .paging {
+      background: purple;
+      color: #fff;
+      grid-area: page;
+      padding: 1rem;
+    }
+
+    .results {
+      background: honeydew;
+      grid-area: results;
+      padding: 1rem;
+    }
+
+    .searchBox {
+      background: antiquewhite;
+      grid-area: searchbox;
+      padding: 1rem;
+
+      input {
+        width: 100%;
+      }
+    }
+
+    .verts {
+      background: goldenrod;
+      color: #fff;
+      grid-area: verts;
+      padding: 1rem;
+    }
+
+    @media (max-width: $breakpoint) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 'searchbox searchbox' 'filters verts' 'results results' 'page page' 'feedback feedback';
+    }
+  }
+}
