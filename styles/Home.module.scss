@@ -9,8 +9,8 @@ $maxWidth: 1500px;
   .container {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: auto auto 1fr;
-    grid-template-areas: 'feedback searchbox' 'filters verts' 'filters results' 'filters page';
+    grid-template-rows: auto auto auto 1fr;
+    grid-template-areas: 'feedback searchbox' 'feedback verts' 'guide results' 'filters results' 'filters page';
     height: 100%;
 
     .feedback {
@@ -24,6 +24,13 @@ $maxWidth: 1500px;
       background: crimson;
       color: #fff;
       grid-area: filters;
+      padding: 1rem;
+    }
+
+    .guide {
+      background: blue;
+      color: #fff;
+      grid-area: guide;
       padding: 1rem;
     }
 
@@ -59,7 +66,11 @@ $maxWidth: 1500px;
 
     @media (max-width: $breakpoint) {
       grid-template-columns: 1fr 1fr;
-      grid-template-areas: 'searchbox searchbox' 'filters verts' 'results results' 'page page' 'feedback feedback';
+      grid-template-areas: 'searchbox searchbox' 'filters verts' 'results results' 'results results' 'feedback feedback' 'page page';
+
+      .guide {
+        display: none;
+      }
     }
   }
 }
